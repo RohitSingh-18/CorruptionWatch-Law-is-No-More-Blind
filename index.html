@@ -1,0 +1,408 @@
+<html>
+  <head>
+    <base href="" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CorruptionWatch - Preview</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>CorruptionWatch</h1>
+      <nav class="nav">
+        <a href="#" class="active" onclick="showPreview('home')">Home</a>
+        <a href="#" onclick="showPreview('projects')">Active Projects</a>
+        <a href="#" onclick="showPreview('blockchain')"
+          >Blockchain Information</a
+        >
+        <a href="#" class="add-project-link">
+          Add New Project
+          <div class="tooltip">Only for govt officials</div>
+        </a>
+        <a href="#" onclick="showPreview('reportCorruption')"
+          >Report Corruption</a
+        >
+        <a href="#" onclick="showPreview('myReports')">My Reports</a>
+      </nav>
+    </header>
+
+    <div id="home" class="page active">
+      <section
+        class="hero"
+        style="
+          height: 70%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        "
+      >
+        <div style="flex: 1; padding: 20px">
+          <h2>Welcome to CorruptionWatch</h2>
+          <p>
+            Empowering Transparency: Uniting Citizens for Ethical Governance.
+          </p>
+        </div>
+        <div style="flex: 1">
+          <img
+            src="./asset.webp"
+            alt="Description of image"
+            style="max-width: 100%; height: auto"
+          />
+        </div>
+      </section>
+
+      <footer class="footer" style="text-align: center; padding: 1rem 0">
+        <p style="margin: 0">
+          &copy; 2024 CorruptionWatch. All rights reserved.
+        </p>
+        <div class="social-media" style="margin-top: 0.5rem">
+          <a href="#" class="social-icon">Facebook</a>
+          <a href="#" class="social-icon">Twitter</a>
+          <a href="#" class="social-icon">Instagram</a>
+        </div>
+      </footer>
+    </div>
+
+    <div id="projects" class="page">
+      <div class="container">
+        <h2 class="section-title">Active Government Projects</h2>
+
+        <div class="project-filters">
+          <input
+            type="text"
+            placeholder="Search projects..."
+            class="search-input"
+          />
+          <select class="filter-select">
+            <option value="all">All Categories</option>
+            <option value="infrastructure">Infrastructure</option>
+            <option value="education">Education</option>
+            <option value="healthcare">Healthcare</option>
+          </select>
+        </div>
+
+        <div class="projects-grid">
+          <div
+            class="project-card"
+            data-name="City Metro Extension"
+            data-budget="$125M"
+            data-timeline="2023-2025"
+            data-status="Ongoing"
+            data-progress="45%"
+            data-category="Infrastructure"
+            data-contractor="Metro Builders Inc."
+            data-description="Extension of the city metro line to cover suburban areas."
+            data-reports="[]"
+          >
+            <div class="project-header">
+              <h3>City Metro Extension</h3>
+              <div class="status-category">
+                <span class="status ongoing">Ongoing</span>
+                <span class="category">Infrastructure</span>
+              </div>
+            </div>
+            <div class="project-details">
+              <p><strong>Budget:</strong> $125M</p>
+              <p><strong>Timeline:</strong> 2023-2025</p>
+              <p><strong>Progress:</strong> 45%</p>
+              <div class="progress-bar">
+                <div class="progress" style="width: 45%"></div>
+              </div>
+            </div>
+            <div class="project-footer">
+              <button
+                class="view-details"
+                onclick="showProjectDetails('City Metro Extension')"
+              >
+                View Details
+              </button>
+              <button
+                class="report-issue"
+                onclick="showReportForm('City Metro Extension')"
+              >
+                Report Issue
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="project-card"
+            data-name="Public School Renovation"
+            data-budget="$8.5M"
+            data-timeline="2023-2024"
+            data-status="Delayed"
+            data-progress="30%"
+            data-category="Education"
+            data-contractor="EduConstruct Ltd."
+            data-description="Comprehensive renovation of 5 public schools in the district."
+            data-reports="[]"
+          >
+            <div class="project-header">
+              <h3>Public School Renovation</h3>
+              <div class="status-category">
+                <span class="status delayed">Delayed</span>
+                <span class="category">Education</span>
+              </div>
+            </div>
+            <div class="project-details">
+              <p><strong>Budget:</strong> $8.5M</p>
+              <p><strong>Timeline:</strong> 2023-2024</p>
+              <p><strong>Progress:</strong> 30%</p>
+              <div class="progress-bar">
+                <div class="progress" style="width: 30%"></div>
+              </div>
+            </div>
+            <div class="project-footer">
+              <button
+                class="view-details"
+                onclick="showProjectDetails('Public School Renovation')"
+              >
+                View Details
+              </button>
+              <button
+                class="report-issue"
+                onclick="showReportForm('Public School Renovation')"
+              >
+                Report Issue
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="project-card"
+            data-name="Hospital Wing Addition"
+            data-budget="$45M"
+            data-timeline="2024-2025"
+            data-status="On Track"
+            data-progress="15%"
+            data-category="Healthcare"
+            data-contractor="HealthBuild Corp."
+            data-description="Construction of a new specialized care wing at the Central Hospital."
+            data-reports="[]"
+          >
+            <div class="project-header">
+              <h3>Hospital Wing Addition</h3>
+              <div class="status-category">
+                <span class="status on-track">On Track</span>
+                <span class="category">Healthcare</span>
+              </div>
+            </div>
+            <div class="project-details">
+              <p><strong>Budget:</strong> $45M</p>
+              <p><strong>Timeline:</strong> 2024-2025</p>
+              <p><strong>Progress:</strong> 15%</p>
+              <div class="progress-bar">
+                <div class="progress" style="width: 15%"></div>
+              </div>
+            </div>
+            <div class="project-footer">
+              <button
+                class="view-details"
+                onclick="showProjectDetails('Hospital Wing Addition')"
+              >
+                View Details
+              </button>
+              <button
+                class="report-issue"
+                onclick="showReportForm('Hospital Wing Addition')"
+              >
+                Report Issue
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="blockchain" class="page">
+      <div class="container">
+        <h2 class="section-title">Blockchain Information</h2>
+        <div id="blockchain-container"></div>
+      </div>
+    </div>
+
+    <div id="reportCorruption" class="page">
+      <div class="container">
+        <h2 class="section-title">Report Corruption</h2>
+        <div class="report-box">
+          <h2>Report an Issue</h2>
+          <form id="reportCorruptionForm">
+            <div class="form-group">
+              <label for="corruptionTypeGeneral">Type of Corruption:</label>
+              <select id="corruptionTypeGeneral" required>
+                <option value="">Select type</option>
+                <option value="bribery">Bribery</option>
+                <option value="embezzlement">Embezzlement</option>
+                <option value="fraud">Fraud</option>
+                <option value="nepotism">Nepotism</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="descriptionGeneral">Description:</label>
+              <textarea id="descriptionGeneral" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="proofGeneral">Upload Proof:</label>
+              <input
+                type="file"
+                id="proofGeneral"
+                accept=".pdf,.jpg,.png,.doc,.docx"
+              />
+            </div>
+            <button type="submit" class="submit-btn">Submit Report</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hash Code Modal -->
+    <div id="hashCodeModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('hashCodeModal')">&times;</span>
+        <h2>Report Submitted Successfully</h2>
+        <div class="hash-code-container">
+          <p>Hash Code: <span id="generatedHashCode"></span></p>
+          <button onclick="copyHashCode()" class="copy-btn">Copy</button>
+        </div>
+        <button onclick="saveHashCode()" class="save-btn">Save</button>
+      </div>
+    </div>
+
+    <!-- Report Issue Modal -->
+    <div id="reportModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('reportModal')">&times;</span>
+        <h2>Report an Issue</h2>
+        <form id="reportForm">
+          <input type="hidden" id="reportProjectName" />
+          <div class="form-group">
+            <label for="corruptionType">Type of Corruption:</label>
+            <select id="corruptionType" required>
+              <option value="">Select type</option>
+              <option value="bribery">Bribery</option>
+              <option value="embezzlement">Embezzlement</option>
+              <option value="fraud">Fraud</option>
+              <option value="nepotism">Nepotism</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="proof">Upload Proof:</label>
+            <input type="file" id="proof" accept=".pdf,.jpg,.png,.doc,.docx" />
+          </div>
+          <button type="submit" class="submit-btn">Submit Report</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- View Details Modal -->
+    <div id="detailsModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('detailsModal')">&times;</span>
+        <h2 id="projectTitle"></h2>
+        <table class="details-table">
+          <tr>
+            <th>Budget</th>
+            <td id="projectBudget"></td>
+          </tr>
+          <tr>
+            <th>Timeline</th>
+            <td id="projectTimeline"></td>
+          </tr>
+          <tr>
+            <th>Status</th>
+            <td id="projectStatus"></td>
+          </tr>
+          <tr>
+            <th>Progress</th>
+            <td id="projectProgress"></td>
+          </tr>
+          <tr>
+            <th>Contractor</th>
+            <td id="projectContractor"></td>
+          </tr>
+          <tr>
+            <th>Description</th>
+            <td id="projectDescription"></td>
+          </tr>
+        </table>
+
+        <h3>Reports</h3>
+        <table class="reports-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="reportsTableBody">
+            <!-- Reports will be dynamically inserted here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="myReports" class="page">
+      <div class="container">
+        <h2 class="section-title">My Reports</h2>
+        <div class="search-container">
+          <input
+            type="text"
+            id="hashSearch"
+            placeholder="Enter hash code to search..."
+          />
+          <button onclick="searchHash()">Search</button>
+        </div>
+        <h3>Saved Hashes</h3>
+        <div id="savedHashesContainer"></div>
+        <div id="hashDetailsContainer"></div>
+      </div>
+    </div>
+
+    <div id="addProjectModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('addProjectModal')"
+          >&times;</span
+        >
+        <h2>Add New Project</h2>
+        <form id="addProjectForm">
+          <div class="form-group">
+            <label for="projectName">Project Name:</label>
+            <input type="text" id="projectName" required />
+          </div>
+          <div class="form-group">
+            <label for="projectBudget">Budget:</label>
+            <input type="text" id="projectBudget" required />
+          </div>
+          <div class="form-group">
+            <label for="projectTimeline">Timeline:</label>
+            <input type="text" id="projectTimeline" required />
+          </div>
+          <div class="form-group">
+            <label for="projectCategory">Category:</label>
+            <select id="projectCategory" required>
+              <option value="">Select category</option>
+              <option value="infrastructure">Infrastructure</option>
+              <option value="education">Education</option>
+              <option value="healthcare">Healthcare</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="projectDescription">Description:</label>
+            <textarea id="projectDescription" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Add Project</button>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
